@@ -1,4 +1,4 @@
-option(time_utility_build_tests "Build all of time-utility's own tests." OFF)
+option(TIME_UTILITY_BUILD_TESTS "Build all of time-utility's own tests." OFF)
 
 cmake_minimum_required(VERSION 3.14)
 
@@ -22,7 +22,7 @@ include_directories(
 add_library(time-utility INTERFACE)
 target_include_directories(time-utility INTERFACE ${PROJECT_SOURCE_DIR}/include/)
 
-if(time_utility_build_tests)
+if(TIME_UTILITY_BUILD_TESTS)
     enable_testing()
 
     add_subdirectory(test/)
