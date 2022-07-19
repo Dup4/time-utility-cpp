@@ -1,10 +1,29 @@
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
+#include "snapshot/snapshot.h"
 
-class HelloWorldTest : public testing::Test {
+#include "time_utility/time_utility.h"
+
+class TimeUtilityTest : public testing::Test {
 protected:
     virtual void SetUp() override {}
 };
 
-TEST_F(HelloWorldTest, hello_world_test) {
-    EXPECT_EQ("Hello World", "Hello World");
+TEST_F(TimeUtilityTest, timestamp_test) {
+    {
+        SNAPSHOT(TimeUtility::Now::SteadyTimestamp<std::chrono::nanoseconds>());
+        SNAPSHOT(TimeUtility::Now::SteadyTimestamp<std::chrono::microseconds>());
+        SNAPSHOT(TimeUtility::Now::SteadyTimestamp<std::chrono::milliseconds>());
+        SNAPSHOT(TimeUtility::Now::SteadyTimestamp<std::chrono::seconds>());
+        SNAPSHOT(TimeUtility::Now::SteadyTimestamp<std::chrono::minutes>());
+        SNAPSHOT(TimeUtility::Now::SteadyTimestamp<std::chrono::hours>());
+    }
+
+    {
+        SNAPSHOT(TimeUtility::Now::SystemTimestamp<std::chrono::nanoseconds>());
+        SNAPSHOT(TimeUtility::Now::SystemTimestamp<std::chrono::microseconds>());
+        SNAPSHOT(TimeUtility::Now::SystemTimestamp<std::chrono::milliseconds>());
+        SNAPSHOT(TimeUtility::Now::SystemTimestamp<std::chrono::seconds>());
+        SNAPSHOT(TimeUtility::Now::SystemTimestamp<std::chrono::minutes>());
+        SNAPSHOT(TimeUtility::Now::SystemTimestamp<std::chrono::hours>());
+    }
 }
