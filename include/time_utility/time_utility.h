@@ -9,4 +9,6 @@ class TimeUtility {};
 
 }  // namespace time_utility
 
+using TimeUtility = ::time_utility::TimeUtility;
+
 #endif  // TIME_UTILITY_TIME_UTILITY_H
