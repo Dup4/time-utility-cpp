@@ -2,7 +2,7 @@ option(TIME_UTILITY_BUILD_TESTS "Build all of time-utility's own tests." OFF)
 
 cmake_minimum_required(VERSION 3.14)
 
-project(time-utility VERSION 0.0.1)
+project(time-utility VERSION 0.0.2)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
