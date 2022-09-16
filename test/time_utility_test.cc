@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "snapshot/snapshot.h"
 
-#include "time_utility/time_utility.h"
+#include "time-utility/time-utility.h"
 
 class TimeUtilityTest : public testing::Test {
 protected:
